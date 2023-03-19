@@ -1,0 +1,79 @@
+[
+  {
+    "GrandSlamID": "2022_1",
+    "GrandSlamName": "Australian Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 2275000
+  },
+  {
+    "GrandSlamID": "2022_2",
+    "GrandSlamName": "French Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 1925000
+  },
+  {
+    "GrandSlamID": "2020_2",
+    "GrandSlamName": "French Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 1775000
+  },
+  {
+    "GrandSlamID": "2019_2",
+    "GrandSlamName": "French Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 1655000
+  },
+  {
+    "GrandSlamID": "2019_4",
+    "GrandSlamName": "U.S. Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 2125000
+  },
+  {
+    "GrandSlamID": "2018_1",
+    "GrandSlamName": "Australian Open",
+    "WinningPlayerId": "P001",
+    "WinningPlayerName": "Roger Federer",
+    "WinningPlayerEarnings": 2000000
+  },
+  {
+    "GrandSlamID": "2018_2",
+    "GrandSlamName": "French Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 1500000
+  },
+  {
+    "GrandSlamID": "2017_1",
+    "GrandSlamName": "Australian Open",
+    "WinningPlayerId": "P001",
+    "WinningPlayerName": "Roger Federer",
+    "WinningPlayerEarnings": 1875000
+  },
+  {
+    "GrandSlamID": "2017_2",
+    "GrandSlamName": "French Open",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 1375000
+  },
+  {
+    "GrandSlamID": "2017_3",
+    "GrandSlamName": "Wimbledon",
+    "WinningPlayerId": "P002",
+    "WinningPlayerName": "Rafael Nadal",
+    "WinningPlayerEarnings": 2250000
+  },
+  {
+    "GrandSlamID": "2017_4",
+    "GrandSlamName": "U.S. Open",
+    "WinningPlayerId": "P001",
+    "WinningPlayerName": "Roger Federer",
+    "WinningPlayerEarnings": 1925000
+  }
+]
