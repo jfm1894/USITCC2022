@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace USITCC2022
 {
@@ -22,7 +23,7 @@ namespace USITCC2022
 
         private void AppForm_Load(object sender, EventArgs e)
         {
-            
+
             // TODO: This line of code loads data into the 'grandSlamInformationDataSet.GrandSlamInformation' table. You can move, or remove it, as needed.
             this.grandSlamInformationTableAdapter.Fill(this.grandSlamInformationDataSet.GrandSlamInformation);
             dataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -54,7 +55,7 @@ namespace USITCC2022
             AdminPanel adminPanel = new AdminPanel();
             this.Hide();
             DialogResult result = adminPanel.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 this.Show();
             }
@@ -65,5 +66,7 @@ namespace USITCC2022
             e.Cancel = true;
             Application.Exit();
         }
+
+
     }
 }
