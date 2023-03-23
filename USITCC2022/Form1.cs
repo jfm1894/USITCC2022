@@ -50,7 +50,7 @@ namespace USITCC2022
                 // Hide the login form
                 this.Hide();
                 // Show the main application form
-                AppForm mainForm = new AppForm();
+                AppForm mainForm = new AppForm(Program.admins[0]);
                 mainForm.Show();
             }
             else
@@ -72,7 +72,7 @@ namespace USITCC2022
                         // Hide the login form
                         this.Hide();
                         // Show the main application form
-                        AppForm mainForm = new AppForm();
+                        AppForm mainForm = new AppForm(Program.users[userIndex]);
                         mainForm.Show();
                     }
                 }

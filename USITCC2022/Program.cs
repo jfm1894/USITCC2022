@@ -1,8 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
+using System.Net.Configuration;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +29,8 @@ namespace USITCC2022
         public static List<SuperUser> admins = JsonConvert.DeserializeObject<List<SuperUser>>(adminjson);
         public static string datajson = File.ReadAllText(DataFilePath);
         public static List<TournamentRecord> data = JsonConvert.DeserializeObject<List<TournamentRecord>>(datajson);
+
+      
         [STAThread]
         static void Main()
         {

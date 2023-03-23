@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SortButton = new System.Windows.Forms.Button();
             this.SortEarnings = new System.Windows.Forms.Button();
             this.SortSlam = new System.Windows.Forms.Button();
@@ -35,7 +36,18 @@
             this.SlamBox = new System.Windows.Forms.TextBox();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.dataView = new System.Windows.Forms.DataGridView();
+            this.grandSlamNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.winningPlayerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.winningPlayerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.winningPlayerEarningsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grandSlamIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grandSlamInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grandSlamInformationDataSet = new USITCC2022.GrandSlamInformationDataSet();
+            this.AdminButton = new System.Windows.Forms.Button();
+            this.grandSlamInformationTableAdapter = new USITCC2022.GrandSlamInformationDataSetTableAdapters.GrandSlamInformationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grandSlamInformationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grandSlamInformationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // SortButton
@@ -92,18 +104,81 @@
             // 
             // dataView
             // 
+            this.dataView.AutoGenerateColumns = false;
             this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grandSlamNameDataGridViewTextBoxColumn,
+            this.winningPlayerIDDataGridViewTextBoxColumn,
+            this.winningPlayerNameDataGridViewTextBoxColumn,
+            this.winningPlayerEarningsDataGridViewTextBoxColumn,
+            this.grandSlamIDDataGridViewTextBoxColumn});
+            this.dataView.DataSource = this.grandSlamInformationBindingSource;
             this.dataView.Location = new System.Drawing.Point(12, 12);
             this.dataView.Name = "dataView";
             this.dataView.Size = new System.Drawing.Size(585, 288);
             this.dataView.TabIndex = 8;
-            this.dataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // grandSlamNameDataGridViewTextBoxColumn
+            // 
+            this.grandSlamNameDataGridViewTextBoxColumn.DataPropertyName = "Grand Slam Name";
+            this.grandSlamNameDataGridViewTextBoxColumn.HeaderText = "Grand Slam Name";
+            this.grandSlamNameDataGridViewTextBoxColumn.Name = "grandSlamNameDataGridViewTextBoxColumn";
+            // 
+            // winningPlayerIDDataGridViewTextBoxColumn
+            // 
+            this.winningPlayerIDDataGridViewTextBoxColumn.DataPropertyName = "Winning Player ID";
+            this.winningPlayerIDDataGridViewTextBoxColumn.HeaderText = "Winning Player ID";
+            this.winningPlayerIDDataGridViewTextBoxColumn.Name = "winningPlayerIDDataGridViewTextBoxColumn";
+            // 
+            // winningPlayerNameDataGridViewTextBoxColumn
+            // 
+            this.winningPlayerNameDataGridViewTextBoxColumn.DataPropertyName = "Winning Player Name";
+            this.winningPlayerNameDataGridViewTextBoxColumn.HeaderText = "Winning Player Name";
+            this.winningPlayerNameDataGridViewTextBoxColumn.Name = "winningPlayerNameDataGridViewTextBoxColumn";
+            // 
+            // winningPlayerEarningsDataGridViewTextBoxColumn
+            // 
+            this.winningPlayerEarningsDataGridViewTextBoxColumn.DataPropertyName = "Winning Player Earnings";
+            this.winningPlayerEarningsDataGridViewTextBoxColumn.HeaderText = "Winning Player Earnings";
+            this.winningPlayerEarningsDataGridViewTextBoxColumn.Name = "winningPlayerEarningsDataGridViewTextBoxColumn";
+            // 
+            // grandSlamIDDataGridViewTextBoxColumn
+            // 
+            this.grandSlamIDDataGridViewTextBoxColumn.DataPropertyName = "Grand Slam ID";
+            this.grandSlamIDDataGridViewTextBoxColumn.HeaderText = "Grand Slam ID";
+            this.grandSlamIDDataGridViewTextBoxColumn.Name = "grandSlamIDDataGridViewTextBoxColumn";
+            // 
+            // grandSlamInformationBindingSource
+            // 
+            this.grandSlamInformationBindingSource.DataMember = "GrandSlamInformation";
+            this.grandSlamInformationBindingSource.DataSource = this.grandSlamInformationDataSet;
+            // 
+            // grandSlamInformationDataSet
+            // 
+            this.grandSlamInformationDataSet.DataSetName = "GrandSlamInformationDataSet";
+            this.grandSlamInformationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // AdminButton
+            // 
+            this.AdminButton.Location = new System.Drawing.Point(522, 326);
+            this.AdminButton.Name = "AdminButton";
+            this.AdminButton.Size = new System.Drawing.Size(75, 23);
+            this.AdminButton.TabIndex = 9;
+            this.AdminButton.Text = "Admin Panel";
+            this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.Visible = false;
+            this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);
+            // 
+            // grandSlamInformationTableAdapter
+            // 
+            this.grandSlamInformationTableAdapter.ClearBeforeFill = true;
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 450);
+            this.Controls.Add(this.AdminButton);
             this.Controls.Add(this.dataView);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.SlamBox);
@@ -115,6 +190,8 @@
             this.Text = "AppForm";
             this.Load += new System.EventHandler(this.AppForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grandSlamInformationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grandSlamInformationDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +205,14 @@
         private System.Windows.Forms.TextBox SlamBox;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.DataGridView dataView;
+        private System.Windows.Forms.Button AdminButton;
+        private GrandSlamInformationDataSet grandSlamInformationDataSet;
+        private System.Windows.Forms.BindingSource grandSlamInformationBindingSource;
+        private GrandSlamInformationDataSetTableAdapters.GrandSlamInformationTableAdapter grandSlamInformationTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grandSlamNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn winningPlayerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn winningPlayerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn winningPlayerEarningsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grandSlamIDDataGridViewTextBoxColumn;
     }
 }
