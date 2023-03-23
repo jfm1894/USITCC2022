@@ -12,9 +12,15 @@ public class User
 		this.Password = null;
 		this.IsAdmin = false;
 	}
+    public User(string user, string pass)
+    {
+        this.Username = user;
+        this.Password = pass;
+		this.IsAdmin = false;
+    }
 
 
-	public bool authenticate(string username, string password)
+    public bool authenticate(string username, string password)
 	{
 		if (this.Username == username && this.Password == password) return true; 
 		else return false;

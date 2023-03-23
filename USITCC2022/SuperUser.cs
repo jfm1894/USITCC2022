@@ -7,8 +7,16 @@ public class SuperUser : User
     public SuperUser()
 	{
         this.Username = null;
-        this.AdminPassword = null;
+        this.Password = null;
         this.IsAdmin = true;
         this.AdminPassword = null;
 	}
+
+    public SuperUser(string user, string pass, string apass)
+    {
+        this.Username=user;
+        this.AdminPassword=apass;
+        this.IsAdmin = true;
+        this.Password = pass;
+    }
 }

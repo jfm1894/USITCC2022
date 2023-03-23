@@ -52,7 +52,7 @@ namespace USITCC2022
             {
                 if(AuthenticateUser(UserNameField.Text,PasswordField.Text) == true)
                 {
-                    User user = new User();
+                    User user = new User(UserNameField.Text,PasswordField.Text);
                     AppForm app = new AppForm(user);
                     this.Hide();
                     DialogResult result = app.ShowDialog();
@@ -70,7 +70,7 @@ namespace USITCC2022
             {
                 if(AuthenticateAdmin(UserNameField.Text,PasswordField.Text,SuperUserField.Text) == true)
                 {
-                    SuperUser superUser = new SuperUser();
+                    SuperUser superUser = new SuperUser(UserNameField.Text,PasswordField.Text,SuperUserField.Text);
                     AppForm app = new AppForm(superUser);
                     this.Hide();
                     DialogResult result = app.ShowDialog();
