@@ -2,7 +2,7 @@
 <xs:schema id="GrandSlamInformationDataSet" targetNamespace="http://tempuri.org/GrandSlamInformationDataSet.xsd" xmlns:mstns="http://tempuri.org/GrandSlamInformationDataSet.xsd" xmlns="http://tempuri.org/GrandSlamInformationDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GrandSlamInformationConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GrandSlamInformationConnectionString (Settings)" PropertyReference="ApplicationSettings.USITCC2022.Properties.Settings.GlobalReference.Default.GrandSlamInformationConnectionString" Provider="System.Data.OleDb" />
         </Connections>
@@ -180,31 +180,52 @@
             <Sources />
           </TableAdapter>
         </Tables>
-        <Sources />
+        <Sources>
+          <DbSource ConnectionRef="GrandSlamInformationConnectionString (Settings)" DbObjectName="GrandSlamInformation" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="findRoger" MethodsParameterType="CLR" Modifier="Public" Name="findRoger" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="findRoger">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT *
+FROM GrandSlamInformation
+WHERE 'Winning Player Name' = "Roger Federer"</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="GrandSlamInformationConnectionString (Settings)" DbObjectName="GrandSlamInformation" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="findRafael" MethodsParameterType="CLR" Modifier="Public" Name="findRafael" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="findRafael">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT *
+FROM GrandSlamInformation
+WHERE 'Winning Player Name' = "Rafael Nadal"</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="GrandSlamInformationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="GrandSlamInformationDataSet" msprop:Generator_DataSetName="GrandSlamInformationDataSet">
+  <xs:element name="GrandSlamInformationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="GrandSlamInformationDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GrandSlamInformationDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AdminCredentials" msprop:Generator_RowEvHandlerName="AdminCredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminCredentialsRowDeleted" msprop:Generator_RowDeletingName="AdminCredentialsRowDeleting" msprop:Generator_RowEvArgName="AdminCredentialsRowChangeEvent" msprop:Generator_TablePropName="AdminCredentials" msprop:Generator_RowChangedName="AdminCredentialsRowChanged" msprop:Generator_RowChangingName="AdminCredentialsRowChanging" msprop:Generator_TableClassName="AdminCredentialsDataTable" msprop:Generator_RowClassName="AdminCredentialsRow" msprop:Generator_TableVarName="tableAdminCredentials" msprop:Generator_UserTableName="AdminCredentials">
+        <xs:element name="AdminCredentials" msprop:Generator_RowClassName="AdminCredentialsRow" msprop:Generator_RowEvHandlerName="AdminCredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminCredentialsRowDeleted" msprop:Generator_RowDeletingName="AdminCredentialsRowDeleting" msprop:Generator_RowEvArgName="AdminCredentialsRowChangeEvent" msprop:Generator_TablePropName="AdminCredentials" msprop:Generator_RowChangedName="AdminCredentialsRowChanged" msprop:Generator_UserTableName="AdminCredentials" msprop:Generator_RowChangingName="AdminCredentialsRowChanging" msprop:Generator_TableClassName="AdminCredentialsDataTable" msprop:Generator_TableVarName="tableAdminCredentials">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="username" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_UserColumnName="username">
+              <xs:element name="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnVarNameInTable="columnusername">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="password" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_UserColumnName="password" minOccurs="0">
+              <xs:element name="password" msprop:Generator_UserColumnName="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnVarNameInTable="columnpassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="adminpassword" msprop:Generator_ColumnPropNameInRow="adminpassword" msprop:Generator_ColumnPropNameInTable="adminpasswordColumn" msprop:Generator_ColumnVarNameInTable="columnadminpassword" msprop:Generator_UserColumnName="adminpassword" minOccurs="0">
+              <xs:element name="adminpassword" msprop:Generator_UserColumnName="adminpassword" msprop:Generator_ColumnPropNameInTable="adminpasswordColumn" msprop:Generator_ColumnPropNameInRow="adminpassword" msprop:Generator_ColumnVarNameInTable="columnadminpassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -214,17 +235,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Credentials" msprop:Generator_RowEvHandlerName="CredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="CredentialsRowDeleted" msprop:Generator_RowDeletingName="CredentialsRowDeleting" msprop:Generator_RowEvArgName="CredentialsRowChangeEvent" msprop:Generator_TablePropName="Credentials" msprop:Generator_RowChangedName="CredentialsRowChanged" msprop:Generator_RowChangingName="CredentialsRowChanging" msprop:Generator_TableClassName="CredentialsDataTable" msprop:Generator_RowClassName="CredentialsRow" msprop:Generator_TableVarName="tableCredentials" msprop:Generator_UserTableName="Credentials">
+        <xs:element name="Credentials" msprop:Generator_RowClassName="CredentialsRow" msprop:Generator_RowEvHandlerName="CredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="CredentialsRowDeleted" msprop:Generator_RowDeletingName="CredentialsRowDeleting" msprop:Generator_RowEvArgName="CredentialsRowChangeEvent" msprop:Generator_TablePropName="Credentials" msprop:Generator_RowChangedName="CredentialsRowChanged" msprop:Generator_UserTableName="Credentials" msprop:Generator_RowChangingName="CredentialsRowChanging" msprop:Generator_TableClassName="CredentialsDataTable" msprop:Generator_TableVarName="tableCredentials">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="username" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_UserColumnName="username">
+              <xs:element name="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnVarNameInTable="columnusername">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="password" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_UserColumnName="password" minOccurs="0">
+              <xs:element name="password" msprop:Generator_UserColumnName="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnVarNameInTable="columnpassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -234,32 +255,32 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GrandSlamInformation" msprop:Generator_RowEvHandlerName="GrandSlamInformationRowChangeEventHandler" msprop:Generator_RowDeletedName="GrandSlamInformationRowDeleted" msprop:Generator_RowDeletingName="GrandSlamInformationRowDeleting" msprop:Generator_RowEvArgName="GrandSlamInformationRowChangeEvent" msprop:Generator_TablePropName="GrandSlamInformation" msprop:Generator_RowChangedName="GrandSlamInformationRowChanged" msprop:Generator_RowChangingName="GrandSlamInformationRowChanging" msprop:Generator_TableClassName="GrandSlamInformationDataTable" msprop:Generator_RowClassName="GrandSlamInformationRow" msprop:Generator_TableVarName="tableGrandSlamInformation" msprop:Generator_UserTableName="GrandSlamInformation">
+        <xs:element name="GrandSlamInformation" msprop:Generator_RowClassName="GrandSlamInformationRow" msprop:Generator_RowEvHandlerName="GrandSlamInformationRowChangeEventHandler" msprop:Generator_RowDeletedName="GrandSlamInformationRowDeleted" msprop:Generator_RowDeletingName="GrandSlamInformationRowDeleting" msprop:Generator_RowEvArgName="GrandSlamInformationRowChangeEvent" msprop:Generator_TablePropName="GrandSlamInformation" msprop:Generator_RowChangedName="GrandSlamInformationRowChanged" msprop:Generator_UserTableName="GrandSlamInformation" msprop:Generator_RowChangingName="GrandSlamInformationRowChanging" msprop:Generator_TableClassName="GrandSlamInformationDataTable" msprop:Generator_TableVarName="tableGrandSlamInformation">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Grand_x0020_Slam_x0020_Name" msprop:Generator_ColumnPropNameInRow="Grand_Slam_Name" msprop:Generator_ColumnPropNameInTable="Grand_Slam_NameColumn" msprop:Generator_ColumnVarNameInTable="columnGrand_Slam_Name" msprop:Generator_UserColumnName="Grand Slam Name" minOccurs="0">
+              <xs:element name="Grand_x0020_Slam_x0020_Name" msprop:Generator_UserColumnName="Grand Slam Name" msprop:Generator_ColumnPropNameInTable="Grand_Slam_NameColumn" msprop:Generator_ColumnPropNameInRow="Grand_Slam_Name" msprop:Generator_ColumnVarNameInTable="columnGrand_Slam_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Winning_x0020_Player_x0020_ID" msprop:Generator_ColumnPropNameInRow="Winning_Player_ID" msprop:Generator_ColumnPropNameInTable="Winning_Player_IDColumn" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_ID" msprop:Generator_UserColumnName="Winning Player ID" minOccurs="0">
+              <xs:element name="Winning_x0020_Player_x0020_ID" msprop:Generator_UserColumnName="Winning Player ID" msprop:Generator_ColumnPropNameInTable="Winning_Player_IDColumn" msprop:Generator_ColumnPropNameInRow="Winning_Player_ID" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_ID" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Winning_x0020_Player_x0020_Name" msprop:Generator_ColumnPropNameInRow="Winning_Player_Name" msprop:Generator_ColumnPropNameInTable="Winning_Player_NameColumn" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_Name" msprop:Generator_UserColumnName="Winning Player Name" minOccurs="0">
+              <xs:element name="Winning_x0020_Player_x0020_Name" msprop:Generator_UserColumnName="Winning Player Name" msprop:Generator_ColumnPropNameInTable="Winning_Player_NameColumn" msprop:Generator_ColumnPropNameInRow="Winning_Player_Name" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Winning_x0020_Player_x0020_Earnings" msprop:Generator_ColumnPropNameInRow="Winning_Player_Earnings" msprop:Generator_ColumnPropNameInTable="Winning_Player_EarningsColumn" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_Earnings" msprop:Generator_UserColumnName="Winning Player Earnings" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Grand_x0020_Slam_x0020_ID" msprop:Generator_ColumnPropNameInRow="Grand_Slam_ID" msprop:Generator_ColumnPropNameInTable="Grand_Slam_IDColumn" msprop:Generator_ColumnVarNameInTable="columnGrand_Slam_ID" msprop:Generator_UserColumnName="Grand Slam ID">
+              <xs:element name="Winning_x0020_Player_x0020_Earnings" msprop:Generator_UserColumnName="Winning Player Earnings" msprop:Generator_ColumnPropNameInTable="Winning_Player_EarningsColumn" msprop:Generator_ColumnPropNameInRow="Winning_Player_Earnings" msprop:Generator_ColumnVarNameInTable="columnWinning_Player_Earnings" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Grand_x0020_Slam_x0020_ID" msprop:Generator_UserColumnName="Grand Slam ID" msprop:Generator_ColumnPropNameInTable="Grand_Slam_IDColumn" msprop:Generator_ColumnPropNameInRow="Grand_Slam_ID" msprop:Generator_ColumnVarNameInTable="columnGrand_Slam_ID">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />

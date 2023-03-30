@@ -32,6 +32,12 @@ namespace USITCC2022
             
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Application.Exit();
+        }
+
         private void UserNameField_TextChanged(object sender, EventArgs e)
         {
             if(UserNameField.Text.Equals("admin"))
